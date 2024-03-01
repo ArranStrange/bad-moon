@@ -1,13 +1,133 @@
+@font-face {
+  font-family: "Oaxaca"; /* Provide a name for your font */
+  src: url("./assets/Oaxaca.otf") format("otf"),
+    /* Specify the path to your font files */ url("./assets/Oaxaca.otf")
+      format("otf"); /* You can include multiple formats for better browser compatibility */
+  /* Optionally, you can specify font-weight and font-style */
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Oaxaca", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://use.typekit.net/fie5ekz.css");
+
+html {
+  font-size: 12px;
+  line-height: 12px;
+  background-color: #d1cdc5;
+  color: #2b2b2b;
+}
+
+body {
+  background-color: #d1cdc5;
+  color: #2b2b2b;
+  font-family: "Oaxaca", serif;
+  font-weight: 100;
+  font-style: normal;
+  scroll-snap-type: x mandatory;
+}
+
+a:hover svg {
+  color: #b2452d;
+}
+
+h1 {
+  font-family: "Oaxaca", serif;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20rem;
+  font-size: 20rem;
+  z-index: 12;
+}
+
+h2 {
+  font-family: "Oaxaca", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10rem;
+  line-height: 8rem;
+  z-index: 12;
+}
+h3 {
+  font-family: "Oaxaca", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 8rem;
+  line-height: 10rem;
+  z-index: 12;
+}
+h4 {
+  font-family: "Oaxaca", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 5rem;
+  line-height: 5rem;
+  z-index: 12;
+}
+h5 {
+  font-family: "Oaxaca", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 3rem;
+  line-height: 5rem;
+  z-index: 12;
+}
+h6 {
+  font-family: "Oaxaca", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 5rem;
+  z-index: 12;
+}
+
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 5%;
+  }
+  h2 {
+    font-size: 10%;
+    line-height: 5%;
+  }
+
+  h3 {
+    font-size: 0.5rem;
+  }
+  h4 {
+    font-size: 0.2rem;
+  }
+  h5 {
+    font-size: 0.1rem;
+  }
+  h6 {
+    font-size: -1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  li {
+    font-size: 0.7rem;
+  }
+}
+
+/* SMOOTH SCROLLING CONTROLS */
+.scroll-section {
+  position: relative;
+  scroll-snap-align: start;
 }
