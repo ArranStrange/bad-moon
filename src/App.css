@@ -1,6 +1,14 @@
 .App {
   text-align: center;
   background-color: #d1cdc5;
+  overflow-y: hidden;
+  scroll-snap-type: y mandatory;
+}
+/* SMOOTH SCROLLING CONTROLS */
+.scroll-section {
+  /* position: relative; */
+  scroll-snap-align: start;
+  /* scroll-behavior: smooth; */
 }
 
 .overlay-texture {

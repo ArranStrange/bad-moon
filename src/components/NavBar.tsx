@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { FaShoppingBasket } from "react-icons/fa";
+import { Link as LinkRouter, useLocation } from "react-router-dom";
 
 export default function NavBar() {
+  const location = useLocation();
   return (
     <div>
       <nav
@@ -34,30 +37,65 @@ export default function NavBar() {
               md:pt-0"
           >
             <li>
-              <a className="md:p-4 py-2 block hover:text-red" href="#">
-                HOME
-              </a>
+              <motion.a
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.5 },
+                }}
+                className="md:p-4 py-2 block hover:text-red"
+                href="#"
+              >
+                <LinkRouter to="/">HOME</LinkRouter>
+              </motion.a>
             </li>
             <li>
-              <a className="md:p-4 py-2 block hover:text-red" href="#">
+              <motion.a
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.5 },
+                }}
+                className="md:p-4 py-2 block hover:text-red"
+                href="#"
+              >
                 MENU
-              </a>
+              </motion.a>
             </li>
             <li>
-              <a className="md:p-4 py-2 block hover:text-red" href="#">
-                MERCH
-              </a>
+              <motion.a
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.5 },
+                }}
+                className="md:p-4 py-2 block hover:text-red"
+                href="#"
+              >
+                {" "}
+                <LinkRouter to="/merch">MERCH</LinkRouter>
+              </motion.a>
             </li>
             <li>
-              <a className="md:p-4 py-2 block hover:text-red" href="#">
+              <motion.a
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.5 },
+                }}
+                className="md:p-4 py-2 block hover:text-red"
+                href="#"
+              >
                 CONTACT
-              </a>
+              </motion.a>
             </li>
           </ul>
         </div>
-        <a style={{ padding: "15px", cursor: "pointer" }}>
+        <motion.a
+          style={{ padding: "15px", cursor: "pointer" }}
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.5 },
+          }}
+        >
           <FaShoppingBasket size={25} />
-        </a>
+        </motion.a>
       </nav>
     </div>
   );

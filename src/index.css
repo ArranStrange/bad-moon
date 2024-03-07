@@ -128,9 +128,6 @@ h6 {
   }
 }
 
-/* SMOOTH SCROLLING CONTROLS */
-.scroll-section {
-  position: relative;
-  scroll-snap-align: start;
-  scroll-behavior: smooth;
+.radio input[type="radio"]:checked + span {
+  background-color: #b2452d;
 }
