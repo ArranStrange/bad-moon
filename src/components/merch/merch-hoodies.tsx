@@ -1,68 +1,110 @@
+import React from "react";
+import { useMediaQuery } from "react-responsive";
 import HoodieTest1 from "./assets/store-test-images/unisex-heavy-blend-hoodie-black-front-65e9c15eb5720.jpg";
 import HoodieTest2 from "./assets/store-test-images/unisex-heavy-blend-hoodie-black-front-65e9c15eb4795.jpg";
 import HoodieTest3 from "./assets/store-test-images/unisex-heavy-blend-hoodie-black-back-65e9c15eb6049.jpg";
 
 export default function MerchHoodies() {
-  return (
-    <div className="flex justify-center items-center w-[650px]">
-      <div className="grid grid-cols-4 gap-4 w-full min-w-[370px] max-w-[650px] p-4 rounded-lg shadow-lg bg-white">
-        {/* Description column */}
-        {/* First column */}
-        <div className="col-span-2 row-span-2 flex">
-          <img
-            src={HoodieTest1}
-            alt="hoodie test 1"
-            className="w-full rounded-lg"
-          />
-        </div>
-        {/* Second column */}
-        <div className="col-span-1 row-span-2 flex flex-col justify-between">
-          <img
-            src={HoodieTest2}
-            alt="hoodie test 1"
-            className="w-full rounded-lg"
-          />
-          <img
-            src={HoodieTest3}
-            alt="hoodie test 1"
-            className="mt-4 w-full rounded-lg"
-          />
-        </div>
-        {/* Third column */}
-        <div className="col-span-1 row-span-2 flex flex-col justify-end items-center">
-          <div className="mt-5 text-start">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Esse corporis,
-            temporibus.
-          </div>
-          <h5 className="mt-4 text-center">25</h5>
+  const isMobile = useMediaQuery({ maxWidth: 768 }); // Adjust max-width based on your breakpoint
 
-          <div className="flex justify-end items-end mt-4">
-            <label className="radio">
-              <input type="radio" name="size" value="S" className="hidden" />
-              <span className="bg-black text-white px-4 py-2 rounded-lg mb-2 mx-1 cursor-pointer">
-                S
-              </span>
-            </label>
-            <label className="radio">
-              <input type="radio" name="size" value="M" className="hidden" />
-              <span className="bg-black text-white px-4 py-2 rounded-lg mb-2 mx-1 cursor-pointer">
-                M
-              </span>
-            </label>
-            <label className="radio">
-              <input type="radio" name="size" value="L" className="hidden" />
-              <span className="bg-black text-white px-4 py-2 rounded-lg mb-2  mx-1 cursor-pointer">
-                L
-              </span>
-            </label>
+  return (
+    <div className="bg-white py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg mx-auto shadow-md bg-white rounded-lg overflow-hidden md:max-w-[46rem]">
+        <div className="md:flex">
+          <div className="md:w-1/2">
+            <img
+              className="h-auto w-full object-cover rounded-lg ml-1"
+              src={HoodieTest1}
+              alt="Hoodie Image 1"
+            />
           </div>
-          <div className="flex w-[75%] mt-4">
-            <button className="bg-red text-white px-4 py-2 rounded-lg">
-              Add to Basket
-            </button>
+          <div className="md:w-1/2 p-8">
+            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold text-center md:text-left">
+              Hoodie
+            </div>
+            <p className="block mt-1 text-lg leading-tight font-medium text-black hover:underline text-center md:text-left">
+              Unisex Heavy Blend Hoodie
+            </p>
+            <p className="mt-2 text-gray-500 text-center md:text-left">
+              This cozy hoodie will keep you warm during chilly days.
+            </p>
+            <div className="mt-4 flex justify-center md:justify-start">
+              <span className="text-gray-500 text-sm">Select Size:</span>
+              <div className="ml-4 flex items-center">
+                <input
+                  type="radio"
+                  id="size-s"
+                  name="size"
+                  value="S"
+                  className="ml-4 focus:ring-red h-4 w-4 text-red border-black"
+                />
+                <label
+                  htmlFor="size-s"
+                  className="ml-2 block text-sm text-black"
+                >
+                  S
+                </label>
+                <input
+                  type="radio"
+                  id="size-m"
+                  name="size"
+                  value="M"
+                  className="ml-4 focus:ring-red h-4 w-4 text-red border-black"
+                />
+                <label
+                  htmlFor="size-m"
+                  className="ml-2 block text-sm text-black"
+                >
+                  M
+                </label>
+                <input
+                  type="radio"
+                  id="size-l"
+                  name="size"
+                  value="L"
+                  className="ml-4 focus:ring-red h-4 w-4 text-red border-black"
+                />
+                <label
+                  htmlFor="size-l"
+                  className="ml-2 block text-sm text-black"
+                >
+                  L
+                </label>
+              </div>
+            </div>
+            <div className="mt-6 flex justify-center md:justify-center">
+              <button className="bg-red hover:bg-black text-white py-2 px-4 rounded">
+                Add to Basket
+              </button>
+            </div>
           </div>
         </div>
+        {!isMobile && (
+          <div className="md:flex">
+            <div className="flex flex-row justify-start items-start gap-[1px] mt-1 md:w-1/2">
+              <img
+                className="h-auto w-[25%] rounded-lg"
+                src={HoodieTest2}
+                alt="Hoodie Image 2"
+              />
+              <img
+                className="h-auto w-[25%] rounded-lg"
+                src={HoodieTest3}
+                alt="Hoodie Image 3"
+              />
+              <img
+                className="h-auto w-[25%] rounded-lg"
+                src={HoodieTest2}
+                alt="Hoodie Image 2"
+              />
+              <img
+                className="h-auto w-[25%] rounded-lg"
+                src={HoodieTest3}
+                alt="Hoodie Image 3"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

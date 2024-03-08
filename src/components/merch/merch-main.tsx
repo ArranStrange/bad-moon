@@ -12,7 +12,7 @@ const images = [BlackSun, WhiteSun, RedSun];
 export default function MerchMain() {
   const scrollY = UseScrollPosition();
   return (
-    <div className="flex flex-col mt-[75px] justify-around items-center h-screen overflow-hidden">
+    <div className="flex flex-col mt-[75px] justify-start items-center h-auto">
       <motion.div
         animate={{ rotate: 0 }}
         whileHover={{ scale: 1.05, rotate: 360 }}
@@ -26,7 +26,7 @@ export default function MerchMain() {
       >
         <ImageCycle images={images} />
       </motion.div>
-      <h3>MERCH</h3>
+      <h4>MERCH</h4>
       <Products />
     </div>
   );
